@@ -231,7 +231,7 @@ body{
     }
 
     .sidebar{
-        width:95%;
+        width:100%;
         height: 10%;
         display:flex;
         place-items: center;
@@ -283,7 +283,7 @@ body{
     }
     
     .docard{
-        width:95%;
+        width:100%;
         height:60%;
         padding: 10px;
     }
