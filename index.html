@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoapp</title>
+    <script src="javascript/script.js" defer></script>
+</head>
+
+<body>
+    <link rel="stylesheet" href="css/style.css">
+    <div class="container">
+
+        <!---- Sidebar Section ---->
+
+        <div class="sidebar">
+            <div class="sidehead">
+                <div class="image"><img src="images/avinas.jpg"></div>
+                <div class="name">Avinash Dubey</div>
+            </div>
+            <div class="sidemid">
+                <div class="sarv">सर्वं </div> 
+                <div class="smbh">सम्भाव्यते</div>
+                <div class="tvayi">त्वयि ।</div>
+            </div>
+            <div class="sidebottom">
+                &#169;avinasdube
+            </div>
+        </div>
+
+        <!---- Main To Do Card ---->
+
+        <div class="docard">
+            <div class="title">
+                To Do
+            </div>
+            <div class="msg">
+                <div id="warn" class="warn">Please write a task first !</div>
+            </div>
+            <form id="taskform" class="inp">
+                <input id="newtin" type="text" placeholder="write your task here . . .">
+                <button id="newtsub" type="submit">Add task</button>
+            </form>
+            <hr>
+
+            <!---- Sample Task To Create Similar Template for all other Tasks ---->
+            
+            <div id="tasks">
+                <!--<div id="taskk" class="task">
+                <div class="content">
+                    <input type="text" class="text" 
+                    value="arrange assignments" >
+                </div>
+                <div class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
