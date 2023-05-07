@@ -220,6 +220,8 @@ body{
     cursor: pointer;
 }
 
+/* ----- RESPONSIVENESS CODES -------- */
+
 @media only screen and (max-width: 900px) {
     .container{
         display: flex;
@@ -229,7 +231,7 @@ body{
     }
 
     .sidebar{
-        width:80%;
+        width:95%;
         height: 10%;
         display:flex;
         place-items: center;
@@ -281,7 +283,7 @@ body{
     }
     
     .docard{
-        width:80%;
+        width:95%;
         height:60%;
         padding: 10px;
     }
