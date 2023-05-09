@@ -375,10 +375,10 @@ body{
 }
 
 @media only screen and (max-width: 420px){
+    #tasks .task .content{
+        width: 60%;
+    }
     #tasks .task .actions{
-        display: flex;
-        flex-direction: row;
-        gap:10px;
-        width: 35%;
+        width: 30%;
     }
 }
