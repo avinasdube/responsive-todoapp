@@ -376,6 +376,6 @@ body{
 
 @media only screen and (max-width: 420px){
     #tasks .task .actions{
-        width: 30%;
+        width: 35%;
     }
 }
