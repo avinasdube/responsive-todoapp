@@ -205,7 +205,7 @@ body{
     align-items:center;
     width:100%;
     height:40px;
-    padding:10px;
+    padding:4px;
     background:rgba(218, 218, 218, 0.14);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(80px);
@@ -213,27 +213,31 @@ body{
     margin-bottom:8px;
     animation:buttons 0.2s linear;
 }
-#task .task .content{
-    flex:1 1 0%;
+#tasks .task .content{
+    width: 75%;
+    height: 100%;
+    display: grid;
+    justify-content: left;
+    background: none;
 }
-#tasks .content .text{
-    width: 200%;
+#tasks .task .content .text{
     border:none;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 250%;
+    font-family:'Segoe UI';
     color:white;
-    background:none;
-    border-radius:6px;
     font-weight:650;
+    background:none;
+    margin-left:8px;
 }
 
-#tasks .actions{
-    margin-right:-12px;
-    margin-bottom:6px;
-    width:112px;
-    height:35px;
-    display:inline-block;
+#tasks .task .actions{
+    width: 120px;
+    height:100%;
+    display: flex;
     place-items: center;
+    justify-content: space-between;
     padding:6px;
+    background: none;
 }
 
 #tasks .actions .edit,.delete{
@@ -356,5 +360,22 @@ body{
 
     .container .docard hr{
         margin-left:0;
+    }
+
+    #tasks .task .content{
+        width: 65%;
+    }
+    
+    #tasks .task .content .text{
+        width: 100%;
+    }
+    #tasks .task .actions{
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    #tasks .task .actions{
+        width: 30%;
     }
 }
