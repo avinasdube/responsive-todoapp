@@ -6,7 +6,6 @@
     transition:all 0.5s ease;
 }
 body{
-    background:#edc0bf;
     background: linear-gradient(360deg,#030303 10%,#1f1f1f 360%);
     font-family:'Inter',sans-serif;
 }
@@ -17,71 +16,99 @@ body{
     place-items: center;
     justify-content:center;
     background-size:cover;
+    gap:20px;
 }
 .sidebar{
     width:10%;
-    height:70%;
-    display:grid;
-    justify-content: center;
-    margin-right:10px;
+    height:60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap:10px;
     border-radius: 8px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(90px);
     padding:4px;
-    color:black;
 }
 .sidebar .sidehead{
-    height:20%;
-    margin-top:8px;
-    border-radius: 5px;
-    display:grid;
-    place-items: center;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight:500;
-    font-size:14px;
-    color:white;
-    background:rgba(218, 218, 218, 0.14);
-    padding:10px;backdrop-filter: blur(60px);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background:#dadada24;
+    padding:10px;
+    backdrop-filter: blur(60px);
     -webkit-backdrop-filter: blur(90px);
+    color:whitesmoke;
+    font-family: system-ui;
 }
 .sidebar .sidehead .image img{
     width:60px;
     height:60px;
     border-radius:100%;
-    margin-bottom:10px;
+    margin-top: 60px;
 }
+
+.sidebar .sidehead .name{
+    margin-top: 10px;
+    font-size:14px;
+    font-weight: bold;
+}
+
 .sidebar .sidemid{
-    height:230%;
-    width:120%;
-    margin-left:-10px;
-    margin-top:-100px;
-    border-radius: 5px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background:rgba(218, 218, 218, 0.14);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(80px);
+    margin-bottom: -50px;
+}
+
+.sidebar .sidemid .fullname{
+    display: none;
+}
+
+.sidebar .sidemid .bio{
+    height: 100%;
+    width: 100%;
     display:grid;
     place-items: center;
-    font-size:18px;
+    font: size 18vw;;
     font-family:'Nirmala UI';
     color:white;
 }
+
 .sidebar .sidebottom{
-    border-radius: 5px;
+    width: 100%;
+    height: 50px;
     display:grid;
-    margin-bottom:-80px;
     place-items:center;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui;
     font-size:10px;
     font-weight:500;
     color:white;
+    background:rgba(218, 218, 218, 0.14);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(80px);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 .docard{
     width:70%;
-    height:70%;
+    height:60%;
     color:black;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(80px);
-    padding:30px;
+    padding: 4px;
     border-radius:8px;
     overflow-y: auto;
 }
@@ -89,11 +116,18 @@ body{
     width:0;
 }
 .container .docard .title{
+    padding: 10px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    background:#dadada24;
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(90px);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:26px;
     font-weight:bolder;
     margin-bottom:14px;
     color:white;
+    margin-top:0;
 }
 .container .docard .msg{
     width:97%;
@@ -223,72 +257,104 @@ body{
 /* ----- RESPONSIVENESS CODES -------- */
 
 @media only screen and (max-width: 900px) {
+
     .container{
         display: flex;
         flex-direction: column;
-        place-items: center;
-        justify-content:center;
+        padding: 20px;
+        justify-content: left;
     }
 
     .sidebar{
         width:100%;
-        height: 10%;
+        height: 60px;
+        gap:20px;
         display:flex;
+        flex-direction: row;
         place-items: center;
         justify-content:space-between;
-        padding: 6px;
+        padding: 10px;
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        background-color: rgb(44, 44, 44);
     }
 
     .sidebar .sidehead{
-        height:100%;
-        width: 30%;
+        width: 10%;
         display:flex;
-        gap: 10px;
-        flex-direction: row;
-        place-items: center;
-        justify-content: space-evenly;
+        background: none;
         margin-top: 0;
+        position: relative;
     }
 
     .sidebar .sidehead .image{
         display: grid;
-        place-items: center;
+        position: absolute;
+        left: 2px;
+        margin-top: 0;
     }
     .sidebar .sidehead .image img{
-        width:40px;
-        height:40px;
+        width:45px;
+        height:45px;
         border-radius:100%;
-        margin-bottom: 0;
+        margin-top:0;
     }
 
     .sidebar .sidehead .name{
-        display: grid;
+        display: none;
         place-items: center;
+        font-size:2.5vw;
     }
 
     .sidebar .sidemid{
-        height:100%;
-        width: 68%;
+        height: 45px;
+        width: 80%;
         display:flex;
-        gap:20px;
         place-items: center;
         justify-content: center;
-        margin-top: 0;
+        gap:2px;
+        margin-bottom: 0;
         font-weight: bold;
+        border-radius: 8px;
+        padding:10px;
+        background: none;
     }
+    .sidebar .sidemid .fullname{
+        display: block;
+        width: 100%;
+        text-align: left;
+        font-size: 16px;
+        font-family: system-ui;
+        color: whitesmoke;
+        font-weight: 500;
+    }
+    .sidebar .sidemid .bio{
+        display: flex;
+        place-items: center;
+        gap: 10px;
+        margin-top:0;
+        font-size: 15px;
+        text-align: left;
+        font-weight: 700;
+    }
+
     .sidebar .sidebottom{
         display:none;
     }
     
     .docard{
         width:100%;
-        height:60%;
+        height:500px;
         padding: 10px;
+        margin-top:0px;
+        background-color: rgb(44, 44, 44);
     }
 
     .container .docard .msg{
         width:100%;
+    }
+
+    .container .docard hr{
+        margin-left:0;
     }
 }
