@@ -1,3 +1,20 @@
+:root{
+    --bhagva: #F86633;
+    --safed: #ECF9FC;
+    --kaala: #1E1E1E;
+    --sona: #FFF6E9;
+}
+
+@font-face{
+    font-family: 'Lufga';
+    src: url('../css/fonts/Lufga Light.otf') format("opentype");
+}
+
+@font-face{
+    font-family: 'Lufga Bold';
+    src: url('../css/fonts/Lufga Bold.otf') format("opentype");
+}
+
 *{
     padding:0;
     margin:0;
@@ -5,199 +22,129 @@
     outline:0;
     transition:all 0.5s ease;
 }
+
 body{
-    background: linear-gradient(360deg,#030303 10%,#1f1f1f 360%);
-    font-family:'Inter',sans-serif;
-}
-.container{
-    height:100vh;
-    width:100vw;
-    display:flex;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Lufga';
+    background-image:linear-gradient(to bottom right, rgb(61, 247, 276),rgb(63, 10, 184));
+    display: flex;
     place-items: center;
     justify-content:center;
-    background-size:cover;
-    gap:20px;
 }
-.sidebar{
-    width:10%;
-    height:60%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+
+.container{
+    width: 350px;
+    height: 600px;
+    background-color: var(--safed);
+    border-radius: 20px;
+    padding:30px;
+}
+
+.container .sidebar{
+    display: flex;
+    flex-direction: row;
     gap:10px;
-    border-radius: 8px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(90px);
-    padding:4px;
+    margin-bottom: 20px;
 }
-.sidebar .sidehead{
-    width: 100%;
+
+.container .sidebar .sideleft{
+    width: 60%;
     height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background:#dadada24;
-    padding:10px;
-    backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(90px);
-    color:whitesmoke;
-    font-family: system-ui;
-}
-.sidebar .sidehead .image img{
-    width:60px;
-    height:60px;
-    border-radius:100%;
-    margin-top: 60px;
+    color: var(--kaala);
 }
 
-.sidebar .sidehead .name{
-    margin-top: 10px;
-    font-size:14px;
-    font-weight: bold;
+.container .sidebar .sideleft .title{
+    font-family: 'Lufga Bold';
+    font-size: 30px;
 }
 
-.sidebar .sidemid{
-    width: 100%;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background:rgba(218, 218, 218, 0.14);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(80px);
-    margin-bottom: -50px;
+.container .sidebar .sideleft .fullname{
+    font-size: 12px;
+    font-weight: 500;
 }
 
-.sidebar .sidemid .fullname{
+.container .sidebar .sideright{
+    width: 40%;
+    height: 50px;
+    display: grid;
+    justify-items: right;
+}
+
+.container .sidebar .sideright img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.container .docard .msg .warn{
+    font-size: 10px;
+    color: var(--bhagva);
     display: none;
+    animation: warn 0.3s linear;
+    margin-bottom: 10px;
 }
 
-.sidebar .sidemid .bio{
-    height: 100%;
-    width: 100%;
-    display:grid;
-    place-items: center;
-    font: size 18vw;;
-    font-family:'Nirmala UI';
-    color:white;
-}
-
-.sidebar .sidebottom{
-    width: 100%;
-    height: 50px;
-    display:grid;
-    place-items:center;
-    font-family: system-ui;
-    font-size:10px;
-    font-weight:500;
-    color:white;
-    background:rgba(218, 218, 218, 0.14);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(80px);
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-.docard{
-    width:70%;
-    height:60%;
-    color:black;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(80px);
-    padding: 4px;
-    border-radius:8px;
-    overflow-y: auto;
-}
-::-webkit-scrollbar{
-    width:0;
-}
-.container .docard .title{
-    padding: 10px;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-    background:#dadada24;
-    backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(90px);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:26px;
-    font-weight:bolder;
-    margin-bottom:14px;
-    color:white;
-    margin-top:0;
-}
-.container .docard .msg{
-    width:97%;
-    position:relative;
-    display:flex;
-    justify-content: left;
-}
-.container .docard .warn{
-    font-size:10px;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight:500;
-    color:red;
-    margin-top:-4px;
-    margin-bottom:6px;
-    display:none;
-    animation:buttons 0.3s linear;
-}
-@keyframes buttons {
+@keyframes warn {
     0%{
         transform: scale(0.2);
     }
 }
+
 .container .docard .inp{
     display:flex;
     place-items: center;
     justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
 }
+
 .container .docard .inp input{
     width:82%;
     height:29px;
     border:none;
-    background:transparent;
+    background-color: var(--sona);
     padding:6px;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color:white;
-    border-radius:6px;
+    color:var(--kaala);
+    border-radius: 16px;
+    font-family: 'Lufga';
     font-weight:400;
 }
+
 .container .docard .inp input:focus{
-    background:rgba(218, 218, 218, 0.14);
-    padding:10px;backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(90px);
+    padding:10px;
 }
+
 .container .docard .inp input:focus::placeholder{
-    color:whitesmoke;
+    color:var(--kaala);
 }
+
 .container .docard .inp button{
-    width:70px;
+    width:80px;
     border:none;
     padding:6px;
-    background:transparent;
-    border-radius:6px;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight:700;
-    color:white;
+    background-color: var(--bhagva);
+    border-radius: 16px;
+    font-family: Lufga Bold;
+    color:var(--kaala);
     cursor: pointer;
 }
 .container .docard .inp button:hover{
-    background:white;
-    color:black;
+    background-color: var(--kaala);
+    color: var(--safed);
 }
+
 .container .docard hr{
-    margin-top:20px;
-    width:100%;
-    margin-left:2px;
+    width: 98%;
+    margin-left: 4px;
+    height: 0.5px;
     margin-bottom:20px;
 }
+
 #tasks{
     padding:0px;
 }
+
 #tasks .task{
     display:flex;
     flex-wrap:auto;
@@ -206,11 +153,9 @@ body{
     width:100%;
     height:40px;
     padding:4px;
-    background:rgba(218, 218, 218, 0.14);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(80px);
-    border-radius:6px;
-    margin-bottom:8px;
+    background-color: var(--bhagva);
+    border-radius: 16px;
+    margin-bottom: 10px;
     animation:buttons 0.2s linear;
 }
 #tasks .task .content{
@@ -218,25 +163,21 @@ body{
     height: 100%;
     display: grid;
     justify-content: left;
-    background: none;
 }
 #tasks .task .content .text{
     border:none;
-    width: 250%;
-    font-family:'Segoe UI';
-    color:white;
-    font-weight:650;
-    background:none;
+    background: none;
+    font-family: 'Lufga Bold';
     margin-left:8px;
+    color: var(--kaala);
 }
 
 #tasks .task .actions{
-    width: 120px;
+    width: 100px;
     height:100%;
     display: flex;
     place-items: center;
     justify-content: space-between;
-    padding:6px;
     background: none;
 }
 
@@ -244,141 +185,16 @@ body{
     border:none;
     width:45px;
     height:28px;
-    font-size:11px;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color:whitesmoke;
-    background:transparent;
-    border-radius:6px;
-    font-weight:800; 
+    font-size:10px;
+    font-family: 'Lufga Bold';
+    color: var(--safed);
+    background-color: var(--kaala);
+    border-radius: 16px;
     margin-right:5px;
 }
+
 #tasks .actions button:hover{
-    background:#edc0bf;
-    color:red;
+    background: var(--sona);
+    color: var(--bhagva);
     cursor: pointer;
-}
-
-/* ----- RESPONSIVENESS CODES -------- */
-
-@media only screen and (max-width: 900px) {
-
-    .container{
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        justify-content: left;
-    }
-
-    .sidebar{
-        width:100%;
-        height: 60px;
-        gap:20px;
-        display:flex;
-        flex-direction: row;
-        place-items: center;
-        justify-content:space-between;
-        padding: 10px;
-        margin-right: 0;
-        margin-bottom: 10px;
-        background-color: rgb(44, 44, 44);
-    }
-
-    .sidebar .sidehead{
-        width: 10%;
-        display:flex;
-        background: none;
-        margin-top: 0;
-        position: relative;
-    }
-
-    .sidebar .sidehead .image{
-        display: grid;
-        position: absolute;
-        left: 2px;
-        margin-top: 0;
-    }
-    .sidebar .sidehead .image img{
-        width:45px;
-        height:45px;
-        border-radius:100%;
-        margin-top:0;
-    }
-
-    .sidebar .sidehead .name{
-        display: none;
-        place-items: center;
-        font-size:2.5vw;
-    }
-
-    .sidebar .sidemid{
-        height: 45px;
-        width: 80%;
-        display:flex;
-        place-items: center;
-        justify-content: center;
-        gap:2px;
-        margin-bottom: 0;
-        font-weight: bold;
-        border-radius: 8px;
-        padding:10px;
-        background: none;
-    }
-    .sidebar .sidemid .fullname{
-        display: block;
-        width: 100%;
-        text-align: left;
-        font-size: 16px;
-        font-family: system-ui;
-        color: whitesmoke;
-        font-weight: 500;
-    }
-    .sidebar .sidemid .bio{
-        display: flex;
-        place-items: center;
-        gap: 10px;
-        margin-top:0;
-        font-size: 15px;
-        text-align: left;
-        font-weight: 700;
-    }
-
-    .sidebar .sidebottom{
-        display:none;
-    }
-    
-    .docard{
-        width:100%;
-        height:500px;
-        padding: 10px;
-        margin-top:0px;
-        background-color: rgb(44, 44, 44);
-    }
-
-    .container .docard .msg{
-        width:100%;
-    }
-
-    .container .docard hr{
-        margin-left:0;
-    }
-
-    #tasks .task .content{
-        width: 65%;
-    }
-    
-    #tasks .task .content .text{
-        width: 100%;
-    }
-    #tasks .task .actions{
-        width: 20%;
-    }
-}
-
-@media only screen and (max-width: 420px){
-    #tasks .task .content{
-        width: 60%;
-    }
-    #tasks .task .actions{
-        width: 30%;
-    }
 }
