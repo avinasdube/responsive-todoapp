@@ -158,12 +158,14 @@ body{
     margin-bottom: 10px;
     animation:buttons 0.2s linear;
 }
+
 #tasks .task .content{
     width: 75%;
     height: 100%;
     display: grid;
     justify-content: left;
 }
+
 #tasks .task .content .text{
     border:none;
     background: none;
@@ -197,4 +199,12 @@ body{
     background: var(--sona);
     color: var(--bhagva);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 420px){
+    body{
+        padding:4px;
+        height: fit-content;
+        width: fit-content;
+    }
 }
