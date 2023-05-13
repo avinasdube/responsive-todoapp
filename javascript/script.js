@@ -129,16 +129,22 @@ function savetolocaltasklist(task) {
 
 function getfromlocaltasklist()
 {
+    const notaskimg = document.querySelector("#notaskimg");
+
     // check if a tasklist array of string already exists or not
 
     let tasklist;
-    if(localStorage.getItem("tasklist")===null)
+    if(localStorage.getItem("tasklist") === null)
     {
         tasklist = [];
+        if(localStorage.getItem("tasklist") === []){
+            notaskimg.style.display = 'grid';
+        }
     }
     else
     {
         tasklist = JSON.parse(localStorage.getItem("tasklist"));
+        notaskimg.style.display = 'none';
     }
 
     // getting the already created tasklist after page reload to 
